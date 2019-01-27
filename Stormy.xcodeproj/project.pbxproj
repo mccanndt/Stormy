@@ -179,21 +179,21 @@
 			isa = PBXGroup;
 			children = (
 			);
-			path = Model;
+			name = Model;
 			sourceTree = "<group>";
 		};
 		FA1DD75F21D067B700ED9255 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = ViewModel;
+			name = ViewModel;
 			sourceTree = "<group>";
 		};
 		FA1DD76021D067D200ED9255 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Resource;
+			name = Resource;
 			sourceTree = "<group>";
 		};
 		FA1DD76121D0680900ED9255 /* Source */ = {

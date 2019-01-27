@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  Stormy
 //
-//  Created by David McCann.
-//  Copyright © David McCann. All rights reserved.
+//  Created by Pasan Premaratne on 5/8/18.
+//  Copyright © 2018 Treehouse. All rights reserved.
 //
 
 import UIKit
@@ -39,4 +39,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+
 }
