@@ -1,0 +1,19 @@
+//
+//  Beta.xcconfig
+//  Stormy
+//
+//  Created by David McCann.
+//  Copyright © David McCann. All rights reserved.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+// App Settings
+ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon.beta
+PRODUCT_NAME = Stormy Beta
+PRODUCT_BUNDLE_IDENTIFIER = com.davidmccann.beta
+PRODUCT_MODULE_NAME = Stormy
+
+// User Defined
+APP_ENV = beta
