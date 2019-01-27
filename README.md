@@ -1,6 +1,6 @@
 # Stormy
 
-Short description of the project
+Weather app following Treehouse course "Build a Weather App" using Carbon-iOS project template from Atomic Robot.
 
 # Getting Started
 
