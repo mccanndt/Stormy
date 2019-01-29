@@ -18,8 +18,24 @@ class ViewController: UIViewController {
     @IBOutlet weak var refreshButton: UIButton!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
+    let client = DarkSkyAPIClient()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        client.getCurrentWeather(at: Coordinate.alcatrazIsland) { [unowned self] currentWeather, error in
+            if let currentWeather = currentWeather {
+                let viewModel = CurrentWeatherViewModel(model: currentWeather)
+                self.displayWeather(using: viewModel)
+            }
+        }
+    }
+
+    func displayWeather(using viewModel: CurrentWeatherViewModel) {
+        currentTemperatureLabel.text = viewModel.temperature
+        currentHumidityLabel.text = viewModel.humidity
+        currentPrecipitationLabel.text = viewModel.precipProbability
+        currentWeatherIcon.image = viewModel.icon
+        currentSummaryLabel.text = viewModel.summary
     }
 }
