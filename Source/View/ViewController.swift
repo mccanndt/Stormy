@@ -22,13 +22,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        client.getCurrentWeather(at: Coordinate.alcatrazIsland) { [unowned self] currentWeather, error in
-            if let currentWeather = currentWeather {
-                let viewModel = CurrentWeatherViewModel(model: currentWeather)
-                self.displayWeather(using: viewModel)
-            }
-        }
+        getCurrentWeather()
     }
 
     func displayWeather(using viewModel: CurrentWeatherViewModel) {
@@ -38,4 +32,29 @@ class ViewController: UIViewController {
         currentWeatherIcon.image = viewModel.icon
         currentSummaryLabel.text = viewModel.summary
     }
+
+    @IBAction func getCurrentWeather() {
+        toggleRefreshAnimation(turnOn: true)
+        // TODO: Get location instead of hardcoding it
+        client.getCurrentWeather(at: Coordinate.alcatrazIsland) { [unowned self] currentWeather, error in
+            if let currentWeather = currentWeather {
+                let viewModel = CurrentWeatherViewModel(model: currentWeather)
+                self.displayWeather(using: viewModel)
+                self.toggleRefreshAnimation(turnOn: false)
+            } else {
+                // TODO: Handle error
+            }
+        }
+    }
+
+    func toggleRefreshAnimation(turnOn: Bool) {
+        refreshButton.isHidden = turnOn
+
+        if turnOn {
+            activityIndicator.startAnimating()
+        } else {
+            activityIndicator.stopAnimating()
+        }
+    }
+
 }
